@@ -41,6 +41,15 @@ public class Konto {
         return anzahlKonten;
     }
 
+    public void setAnzahlKonten(int _anzahlKonten) {
+        anzahlKonten = _anzahlKonten;
+        try {
+            Depression.saveAnzahlKonten(anzahlKonten);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void setKontostand(double _kontostand) {
         this.kontostand = _kontostand;
     }

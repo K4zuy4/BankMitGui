@@ -1,5 +1,6 @@
 package org.bankgui.bank;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -34,6 +35,7 @@ public class Schmerzen {
             System.out.println("Was möchten Sie tun?");
             System.out.println("1. Bestimmtes Kundenkonto anzeigen");
             System.out.println("2. Alle Kundenkonten anzeigen");
+            System.out.println("3. Kunde löschen");
 
 
             String eingabe = scanner.nextLine();
@@ -63,6 +65,25 @@ public class Schmerzen {
                         System.out.println("Kontostand: " + kunden.getKonto().getKontostand());
                         System.out.println();
                     }
+                    break;
+                case "3":
+                    System.out.println("Kundennummer eingeben:");
+                    int kundennummerLoeschen = scanner.nextInt();
+
+                    Kunde kundeLoeschen = findeKundenNachNummer(Depression.getKunden(), kundennummerLoeschen);
+                    if (kundeLoeschen == null) {
+                        System.out.println("Kunde nicht gefunden");
+                        break;
+                    }
+                    kundeLoeschen.getKonto().setAnzahlKonten(kundeLoeschen.getKonto().getAnzahlKonten() - 1);
+                    Depression.getKunden().remove(kundeLoeschen);
+                    try {
+                        Depression.saveData();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                    System.out.println("Kunde gelöscht");
                     break;
                 default:
                     System.out.println("Ungültige Eingabe");

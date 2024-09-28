@@ -17,7 +17,7 @@ public class Depression {
 
     public static List<Kunde> kunden = new ArrayList<>();
 
-    public static void addListKunde(Kunde kunde) throws IOException {
+    public static void addListKunde(Kunde kunde) {
         kunden.add(kunde);
     }
 
