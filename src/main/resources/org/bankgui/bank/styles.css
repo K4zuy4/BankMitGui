@@ -1,0 +1,43 @@
+.root {
+    -fx-background-color: #011627;
+}
+
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-padding: 5px 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+#textLabel {
+    -fx-fill: white;
+    -fx-alignment: center;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button:pressed {
+    -fx-background-color: #1c5984;
+}
+
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-text-fill: #333333;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 3px;
+    -fx-padding: 8px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 3px;
+}
+
+.text-field:focused .text, .password-field:focused .text {
+    -fx-text-fill: #3498db;
+}

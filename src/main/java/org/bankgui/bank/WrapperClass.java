@@ -3,14 +3,14 @@ package org.bankgui.bank;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Hilfe {
+public class WrapperClass {
     private List<Kunde> kunden;
 
-    public Hilfe() {
+    public WrapperClass() {
         this.kunden = new ArrayList<>();
     }
 
-    public Hilfe(List<Kunde> kunden) {
+    public WrapperClass(List<Kunde> kunden) {
         this.kunden = kunden != null ? kunden : new ArrayList<>();
     }
 

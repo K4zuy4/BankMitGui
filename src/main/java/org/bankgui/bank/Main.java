@@ -17,13 +17,13 @@ public class Main extends Application {
         primaryStage.show();
 
         try {
-            Depression.loadData();
+            saveData.loadData();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        Depression.createBankDirectory();
-        Schmerzen.startTerminal();
+        saveData.createBankDirectory();
+        CurrentUserHandler.startTerminal();
     }
 
     public static void ladeFXML(String fxml) throws IOException {
@@ -35,7 +35,7 @@ public class Main extends Application {
                 scene = new Scene(loader.load());
                 MainScreenController controller = loader.getController();
                 controller.setWelcomeText();
-                primaryStage.setTitle("Banking App - " + Schmerzen.getAngemeldeterKunde().getName());
+                primaryStage.setTitle("Banking App - " + CurrentUserHandler.getAngemeldeterKunde().getName());
                 break;
             case "SignUp":
                 loader.setLocation(Main.class.getResource("SignUp.fxml"));
@@ -50,6 +50,9 @@ public class Main extends Application {
             default:
                 throw new IllegalArgumentException("Unbekannte FXML-Datei: " + fxml);
         }
+
+        /*String css = String.valueOf(Main.class.getResource("styles.css"));
+        scene.getStylesheets().add(css);*/
 
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();

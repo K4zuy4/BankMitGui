@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-public class Schmerzen {
+public class CurrentUserHandler {
 
     static Kunde angemeldeterKunde;
 
@@ -45,7 +45,7 @@ public class Schmerzen {
                     System.out.println("Kundennummer eingeben:");
                     int kundennummer = scanner.nextInt();
 
-                    Kunde kunde = findeKundenNachNummer(Depression.getKunden(), kundennummer);
+                    Kunde kunde = findeKundenNachNummer(saveData.getKunden(), kundennummer);
                     if (kunde == null) {
                         System.out.println("Kunde nicht gefunden");
                         break;
@@ -57,7 +57,7 @@ public class Schmerzen {
                     System.out.println("Kontostand: " + kunde.getKonto().getKontostand());
                     break;
                 case "2":
-                    for(Kunde kunden : Depression.getKunden()) {
+                    for(Kunde kunden : saveData.getKunden()) {
                         System.out.println("Benutzername: " + kunden.getName());
                         System.out.println("Kundennummer: " + kunden.getKdNr());
                         System.out.println("Passwort: " + kunden.getPasswort());
@@ -70,15 +70,15 @@ public class Schmerzen {
                     System.out.println("Kundennummer eingeben:");
                     int kundennummerLoeschen = scanner.nextInt();
 
-                    Kunde kundeLoeschen = findeKundenNachNummer(Depression.getKunden(), kundennummerLoeschen);
+                    Kunde kundeLoeschen = findeKundenNachNummer(saveData.getKunden(), kundennummerLoeschen);
                     if (kundeLoeschen == null) {
                         System.out.println("Kunde nicht gefunden");
                         break;
                     }
                     kundeLoeschen.getKonto().setAnzahlKonten(kundeLoeschen.getKonto().getAnzahlKonten() - 1);
-                    Depression.getKunden().remove(kundeLoeschen);
+                    saveData.getKunden().remove(kundeLoeschen);
                     try {
-                        Depression.saveData();
+                        saveData.saveData();
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }

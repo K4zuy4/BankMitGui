@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Depression {
+public class saveData {
     private static final String ANZAHL_KONTEN_PATH = getAppDataPath("Bank/anzahlKonten.txt");
     private static final String DATEN_PFAD = getAppDataPath("Bank/daten.json");
     private static final ObjectMapper objectMapper = new ObjectMapper();
@@ -31,7 +31,7 @@ public class Depression {
     }
 
     public static void saveData() throws IOException {
-        Hilfe wrapper = new Hilfe(kunden);
+        WrapperClass wrapper = new WrapperClass(kunden);
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(DATEN_PFAD), wrapper);
     }
 
@@ -49,7 +49,7 @@ public class Depression {
             return;
         }
 
-        Hilfe wrapper = objectMapper.readValue(file, Hilfe.class);
+        WrapperClass wrapper = objectMapper.readValue(file, WrapperClass.class);
 
         kunden.clear();
         kunden.addAll(wrapper.getKunde());

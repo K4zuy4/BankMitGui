@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="430.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bankgui.bank.MainScreenController">
    <children>
-      <Text fx:id="welcomeText" layoutX="5.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Willkommen zurück: " textAlignment="CENTER" wrappingWidth="299.2000366210939">
+      <Text id="textLabel" fx:id="welcomeText" layoutX="5.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Willkommen zurück: " textAlignment="CENTER" wrappingWidth="299.2000366210939">
          <font>
             <Font size="24.0" />
          </font></Text>
@@ -20,12 +20,12 @@
         </buttons>
       </ButtonBar>
       <TextField fx:id="betragField" layoutX="61.0" layoutY="176.0" prefHeight="38.0" prefWidth="188.0" promptText="Betrag" />
-      <Text fx:id="kontoText" layoutX="61.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kontostand:" textAlignment="CENTER" wrappingWidth="188.0">
+      <Text id="textLabel" fx:id="kontoText" layoutX="61.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kontostand:" textAlignment="CENTER" wrappingWidth="188.0">
          <font>
             <Font size="18.0" />
          </font></Text>
       <TextField fx:id="passwordField" layoutX="61.0" layoutY="231.0" prefHeight="38.0" prefWidth="188.0" promptText="Passwort" visible="false" />
-      <Text fx:id="kontonummerText" layoutX="15.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="92.0" />
-      <Text fx:id="kundennummerText" layoutX="206.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Test" textAlignment="JUSTIFY" wrappingWidth="92.0" />
+      <Text id="textLabel" fx:id="kontonummerText" layoutX="15.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="92.0" />
+      <Text id="textLabel" fx:id="kundennummerText" layoutX="206.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Test" textAlignment="JUSTIFY" wrappingWidth="92.0" />
    </children>
 </AnchorPane>

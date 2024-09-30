@@ -21,6 +21,7 @@ public class SignInController {
     PasswordField passwordField;
     @FXML
     TextField textField;
+
     Kunde kunde;
 
     @FXML
@@ -29,7 +30,7 @@ public class SignInController {
             return;
         }
 
-        List<Kunde> kunden = Depression.getKunden();
+        List<Kunde> kunden = saveData.getKunden();
 
         for (Kunde _kunde : kunden) {
             if (_kunde.getName().equals(textField.getText()) && _kunde.getPasswort().equals(passwordField.getText())) {
@@ -39,7 +40,7 @@ public class SignInController {
         }
 
         if (kunde != null) {
-            Schmerzen.setAngemeldeterKunde(kunde);
+            CurrentUserHandler.setAngemeldeterKunde(kunde);
             Main.ladeFXML("MainScreen");
         } else {
             anmeldeButton.setText("Falscher Benutzername oder Passwort");

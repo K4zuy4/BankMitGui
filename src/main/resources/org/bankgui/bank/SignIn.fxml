@@ -9,14 +9,14 @@
 
 <AnchorPane prefHeight="430.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bankgui.bank.SignInController">
    <children>
-      <Text layoutX="17.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anmeldung" textAlignment="CENTER" wrappingWidth="275.13671875">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
       <TextField fx:id="textField" layoutX="53.0" layoutY="93.0" prefHeight="39.0" prefWidth="204.0" promptText="Name" />
       <PasswordField fx:id="passwordField" layoutX="53.0" layoutY="150.0" prefHeight="39.0" prefWidth="204.0" promptText="Passwort" />
       <Button fx:id="anmeldeButton" layoutX="53.0" layoutY="234.0" mnemonicParsing="false" onAction="#onAnmeldeButtonClick" prefHeight="39.0" prefWidth="88.0" text="Anmelden" />
       <Button fx:id="registrierenButton" layoutX="169.0" layoutY="234.0" mnemonicParsing="false" onAction="#onRegistrierenButtonClick" prefHeight="39.0" prefWidth="88.0" text="Registrieren" />
+      <Text id="textLabel" layoutX="18.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anmeldung" textAlignment="CENTER" wrappingWidth="275.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

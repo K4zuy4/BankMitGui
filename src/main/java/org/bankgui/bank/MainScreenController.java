@@ -31,7 +31,7 @@ public class MainScreenController {
 
     @FXML
     protected void onAuszahlButtonClick() throws IOException {
-        Konto konto = Schmerzen.getAngemeldeterKunde().getKonto();
+        Konto konto = CurrentUserHandler.getAngemeldeterKunde().getKonto();
         String betragText = betragField.getText();
         double betrag;
 
@@ -55,7 +55,7 @@ public class MainScreenController {
 
         if (konto.auszahlen(betrag)) {
             kontoText.setText("Kontostand: " + konto.getKontostand());
-            Depression.saveData();
+            saveData.saveData();
         } else {
             betragField.setStyle("-fx-background-color: red;");
             auszahlButton.setStyle("-fx-background-color: red;");
@@ -74,7 +74,7 @@ public class MainScreenController {
 
     @FXML
     protected void onEinzahlButtonClick() throws IOException {
-        Konto konto = Schmerzen.getAngemeldeterKunde().getKonto();
+        Konto konto = CurrentUserHandler.getAngemeldeterKunde().getKonto();
         String betragText = betragField.getText();
         double betrag;
 
@@ -98,7 +98,7 @@ public class MainScreenController {
 
         if (konto.einzahlen(betrag)) {
             kontoText.setText("Kontostand: " + konto.getKontostand());
-            Depression.saveData();
+            saveData.saveData();
         } else {
             betragField.setStyle("-fx-background-color: red;");
             einzahlButton.setStyle("-fx-background-color: red;");
@@ -117,10 +117,10 @@ public class MainScreenController {
 
     @FXML
     public void setWelcomeText() {
-        welcomeText.setText("Willkommen zurück " + Schmerzen.getAngemeldeterKunde().getName() + "!");
-        Konto konto = Schmerzen.getAngemeldeterKunde().getKonto();
+        welcomeText.setText("Willkommen zurück " + CurrentUserHandler.getAngemeldeterKunde().getName() + "!");
+        Konto konto = CurrentUserHandler.getAngemeldeterKunde().getKonto();
         kontoText.setText("Kontostand: " + konto.getKontostand());
-        kundennummerText.setText("KdNr: " + Schmerzen.getAngemeldeterKunde().getKdNr());
+        kundennummerText.setText("KdNr: " + CurrentUserHandler.getAngemeldeterKunde().getKdNr());
         kontonummerText.setText("KtoNr: " + konto.getKtoNr());
     }
 }

@@ -29,7 +29,7 @@ public class SignUpController {
             return;
         }
 
-        if (Depression.getKunden().stream().anyMatch(kunde -> kunde.getName().equals(textField.getText()))) {
+        if (saveData.getKunden().stream().anyMatch(kunde -> kunde.getName().equals(textField.getText()))) {
             registrierenButton.setText("Benutzername bereits vergeben");
             registrierenButton.setStyle("-fx-background-color: red;");
             ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
@@ -41,9 +41,9 @@ public class SignUpController {
 
             scheduler.shutdown();
         } else {
-            Kunde kunde = new Kunde(Depression.loadAnzahlKonten(), textField.getText(), passwordField.getText());
-            Depression.addListKunde(kunde);
-            Depression.saveData();
+            Kunde kunde = new Kunde(saveData.loadAnzahlKonten(), textField.getText(), passwordField.getText());
+            saveData.addListKunde(kunde);
+            saveData.saveData();
             Main.ladeFXML("SignIn");
         }
     }

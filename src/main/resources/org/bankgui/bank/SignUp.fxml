@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="430.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bankgui.bank.SignUpController">
    <children>
-      <Text layoutX="17.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrierung" textAlignment="CENTER" wrappingWidth="275.13671875">
+      <Text id="textLabel" layoutX="17.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrierung" textAlignment="CENTER" wrappingWidth="275.13671875">
          <font>
             <Font size="24.0" />
          </font>

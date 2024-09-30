@@ -12,7 +12,7 @@ public class Konto {
 
     static {
         try {
-            anzahlKonten = Depression.loadAnzahlKonten();
+            anzahlKonten = saveData.loadAnzahlKonten();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -23,7 +23,7 @@ public class Konto {
     public Konto(int _ktoNr) throws IOException {
         this.ktoNr = _ktoNr + 1000;
         this.kontostand = 0;
-        Depression.saveAnzahlKonten(++anzahlKonten);
+        saveData.saveAnzahlKonten(++anzahlKonten);
     }
 
     @JsonProperty("kontonummer")
@@ -44,7 +44,7 @@ public class Konto {
     public void setAnzahlKonten(int _anzahlKonten) {
         anzahlKonten = _anzahlKonten;
         try {
-            Depression.saveAnzahlKonten(anzahlKonten);
+            saveData.saveAnzahlKonten(anzahlKonten);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
