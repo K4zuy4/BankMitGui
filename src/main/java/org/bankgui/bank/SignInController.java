@@ -41,7 +41,7 @@ public class SignInController {
 
         if (kunde != null) {
             CurrentUserHandler.setAngemeldeterKunde(kunde);
-            Main.ladeFXML("MainScreen");
+            Main.ladeFXML("KontoScreen");
         } else {
             anmeldeButton.setText("Falscher Benutzername oder Passwort");
             anmeldeButton.setStyle("-fx-background-color: red;");

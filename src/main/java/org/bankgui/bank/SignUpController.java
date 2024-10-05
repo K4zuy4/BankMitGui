@@ -43,7 +43,7 @@ public class SignUpController {
         } else {
             Kunde kunde = new Kunde(saveData.loadAnzahlKonten(), textField.getText(), passwordField.getText());
             saveData.addListKunde(kunde);
-            saveData.saveData();
+            saveData.savedata();
             Main.ladeFXML("SignIn");
         }
     }

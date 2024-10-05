@@ -21,9 +21,14 @@ public class Konto {
     public Konto () {}
 
     public Konto(int _ktoNr) throws IOException {
-        this.ktoNr = _ktoNr + 1000;
+        this.ktoNr = _ktoNr;
         this.kontostand = 0;
-        saveData.saveAnzahlKonten(++anzahlKonten);
+    }
+
+    public Konto(Boolean wahr,int _ktoNr) throws IOException {
+        this.ktoNr = _ktoNr;
+        this.kontostand = 0;
+        if(wahr) saveData.saveAnzahlKonten(++anzahlKonten);
     }
 
     @JsonProperty("kontonummer")

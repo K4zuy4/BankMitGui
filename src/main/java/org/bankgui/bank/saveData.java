@@ -30,7 +30,7 @@ public class saveData {
         return appData + File.separator + fileName;
     }
 
-    public static void saveData() throws IOException {
+    public static void savedata() throws IOException {
         WrapperClass wrapper = new WrapperClass(kunden);
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(DATEN_PFAD), wrapper);
     }
