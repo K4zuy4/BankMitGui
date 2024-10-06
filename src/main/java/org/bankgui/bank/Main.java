@@ -73,8 +73,8 @@ public class Main extends Application {
                 throw new IllegalArgumentException("Unbekannte FXML-Datei: " + fxml);
         }
 
-        /*String css = String.valueOf(Main.class.getResource("styles.css"));
-        scene.getStylesheets().add(css);*/
+        String css = String.valueOf(Main.class.getResource("styles.css"));
+        scene.getStylesheets().add(css);
 
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
